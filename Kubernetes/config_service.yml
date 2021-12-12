@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: config-container
-          image: chabrik/configserver
+          image: test/configserver
           imagePullPolicy: Always
           ports:
             - containerPort: 9101

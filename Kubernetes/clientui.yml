@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: client-container
-          image: chabrik/client
+          image: test/client
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

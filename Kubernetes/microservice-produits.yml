@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: product-container
-          image: chabrik/mproduits
+          image: test/mproduits
           imagePullPolicy: Always
           ports:
             - containerPort: 9001
@@ -34,4 +34,4 @@ spec:
     app: microservice-produits-app
   ports:
     - port: 80
-      targetPort: 9001         
+      targetPort: 9001
