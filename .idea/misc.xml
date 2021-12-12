@@ -7,10 +7,10 @@
         <option value="$PROJECT_DIR$/microservice-paiement/pom.xml" />
         <option value="$PROJECT_DIR$/microservice-commandes/pom.xml" />
         <option value="$PROJECT_DIR$/clientui/pom.xml" />
-        <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/apigateway/pom.xml" />
         <option value="$PROJECT_DIR$/springadmin/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
       </list>
     </option>
   </component>
