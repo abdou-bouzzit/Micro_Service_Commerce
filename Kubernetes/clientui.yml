@@ -1,0 +1,36 @@
+# Deployment for the containers/pods
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clientui-app
+  labels:
+    app: clientui-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clientui-app
+  template:
+    metadata:
+      labels:
+        app: clientui-app
+    spec:
+      containers:
+        - name: client-container
+          image: chabrik/client
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: clientui-app
+spec:
+  selector:
+    app: clientui-app
+  ports:
+    - port: 80
+      targetPort: 8080

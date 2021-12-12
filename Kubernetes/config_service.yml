@@ -1,0 +1,36 @@
+# Deployment for the containers/pods
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-service-app
+  labels:
+    app: config-service-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-service-app
+  template:
+    metadata:
+      labels:
+        app: config-service-app
+    spec:
+      containers:
+        - name: config-container
+          image: chabrik/configserver
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9101
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: config-service-app
+spec:
+  selector:
+    app: config-service-app
+  ports:
+    - port: 80
+      targetPort: 9101

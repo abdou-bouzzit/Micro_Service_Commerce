@@ -1,0 +1,37 @@
+# Deployment for the containers/pods
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-produits-app
+  labels:
+    app: microservice-produits-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservice-produits-app
+  template:
+    metadata:
+      labels:
+        app: microservice-produits-app
+    spec:
+      containers:
+        - name: product-container
+          image: chabrik/mproduits
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9001
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: microservice-produits-app
+spec:
+  selector:
+    app: microservice-produits-app
+  ports:
+    - port: 80
+      targetPort: 9001         
